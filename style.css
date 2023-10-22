@@ -1,0 +1,37 @@
+.homePage{
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+
+.header{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+
+}
+
+
+
+.content{
+display: flex;
+justify-content: center;
+align-self: center;
+align-items: center;
+padding: 10px;
+margin: 10px;
+}
+
+.but{
+padding: 10px;
+margin: 10px;
+background-color: red;
+}
+ol{
+    padding-left: 30px;
+   margin-top: 1em;
+   margin-bottom: 1em;
+}

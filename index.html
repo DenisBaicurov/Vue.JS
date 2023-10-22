@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="homePage">
+<div class="header">
+    <div class="content"><img src="img/logo.svg" alt=""></div>
+<div class="content"><img src="img/menubar.svg" alt=""></div>
+</div>
+<div class="content">
+  <img src="img/pict1.png" alt="" style="padding: 10px;">
+</div>
+
+<div class="homePage">
+<div class="content"><img src="img/heading1.svg" alt="" style="margin-top: 50px;"></div>
+<div class="content">
+  <img src="img/pict2.png" alt="" style="width: 25%;padding: 10px;margin: 25px;">
+  <img src="img/pict3.png" alt="" style="width: 25%;padding: 10px;margin: 25px;">
+</div>
+
+<div class="content">
+  <img src="img/pict4.png" alt="" style="width: 25%;padding: 10px;margin: 25px;">
+  <img src="img/pict5.png" alt="" style="width: 25%;padding: 10px;margin: 25px;">
+</div>
+
+
+</div>
+
+<div class="content">
+  <img src="img/counter.svg" alt="">
+  
+  </div>
+<div class="homePage">
+  <div class="content">
+<img src="img/heading2.svg" alt="" style="margin-top:25px ;">
+  </div>
+<div class="content" style="width: 80%;">
+<img src="img/pict6.png" alt=""style="width: 25%;padding: 10px;margin: 25px;" >
+<img src="img/pict7.png" alt="" style="width: 25%;padding: 10px;margin: 25px;">
+<img src="img/pict8.png" alt="" style="width: 25%;padding: 10px;margin: 25px;">
+
+</div>
+
+<div class="content" style="width: 80%;">
+<img src="img/interno.svg" alt="" style="width:25%;height: 272px; ; padding: 10px;margin: 25px;">
+<img src="img/pages.svg" alt=""style="width:25%;height: 272px; ; padding: 10px;margin: 25px;">
+<img src="img/contact.svg" alt=""  style="width:25%;height: 272px; ; padding: 10px;margin: 25px; ">
+</div>
+
+
+</div>
+
+<div class="content">
+<button class="but" id="app" @click="reverse">{{message}}</button>
+
+
+</div>
+<div id="add">
+<div class="content">
+
+  <button class="but" @click="addFruit">{{message}}</button>
+</div>
+<div class="content">
+  <ol>
+    <li v-for="item in items" :key="item.message" @click="del">
+      {{ item.message }}
+    </li>
+  </ol>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js">
+
+</script>
+<script>
+const app=new Vue();
+let str="певернуть";
+new Vue({
+  el:'#app',
+  data:{
+        message:'перевернуть',
+        count:0
+    },
+  methods:{
+  
+    reverse:function(){ 
+      var splitString = str.split("");
+      var reverseArray=splitString.reverse();
+      var joinArray=reverseArray.join("")
+            this.message=joinArray;
+            this.count++;
+            if(this.count%2!=0){
+              this.message=joinArray;}
+            else{this.message='перевернуть'}
+            return this.message;
+        } 
+       
+    }
+
+})
+</script>
+
+
+<script>
+const add=new Vue();
+new Vue({
+el:'#add',
+data:{
+  message:'добавить',
+
+  items: [
+      { message: 'Банан' },
+      { message: 'Яблоко' },
+      {message:'Дыня'}
+    ]
+} 
+  ,
+  methods: {
+    addFruit: function() {
+     this.items.push({message:'Новый элемент списка'})
+     
+    },
+    del:function(item){
+      this.items.splice(item,1);
+    }
+  }
+
+
+})
+
+</script>
+
+
+
+
+</body>
+
+
