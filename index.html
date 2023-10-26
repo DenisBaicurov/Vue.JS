@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="homePage">
+    <div class="header">
+   <div class="content"><img src="img/logo.svg" alt="заголовок"></div>
+   <div class="content"><img src="img/menubar.svg" alt="заголовок"></div>
+</div>
+
+<div class="content"><img src="img/pict1.png" alt="картинка"
+    style="width: 95%;"></div>
+
+
+<div class="content1">
+    <div style="display: flex;justify-content: flex-start;margin-left: 25%;">
+<img src="img/latest.svg" alt="заголовок">
+</div>
+<div class="content">
+<img src="img/pict2.png" alt="картинка" style="width: 550px;margin-left: 20%;">
+<div class="content2">
+<h1 >
+    Low Cost Latest Invented Interior Designing Ideas
+</h1>
+
+
+    <h2 >
+        Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.
+    </h2>
+
+<h2>
+
+    Lorem Ipsum is not simply random text. It has roots in a piece of classica.
+
+</h2>
+
+<div style="display: flex;justify-content: space-between;">
+<h2>26 December,2022</h2>
+<img src="img/vector.svg" alt="указатель">
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<div class="homePage" id="app">
+<div class="topo"><h1 style="font-size: 40px;">Articles & News</h1></div>
+
+    <div class="content">
+<div  v-for="({url,name,price}) in images" :key="name"
+   style="width: 480px;" >
+<img :src="url" :alt="name" style="width: 380px;"/>
+</div>
+</div>
+<div class="content">
+
+    <div  v-for="({url,name,price}) in images" :key="name" style="width: 480px;" >
+    <img :src="url" :alt="name" style="width: 380px;"/>
+        </div>
+
+
+</div>
+
+<div  class="content" style="padding:50px ;padding-bottom:100px ;"><button @click="increase">Возрастание</button></div>
+
+
+<div class="content" style="width: 80%;">
+    <img src="img/interno.svg" alt="" style="width:25%;height: 272px; ; padding: 10px;margin: 25px;">
+    <img src="img/pages.svg" alt=""style="width:25%;height: 272px; ; padding: 10px;margin: 25px;">
+    <img src="img/contact.svg" alt=""  style="width:25%;height: 272px; ; padding: 10px;margin: 25px; ">
+    </div>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" type="text/javascript" charset="utf-8"></script> 
+
+<script type="text/javascript">
+const app=
+new Vue({
+el:"#app",
+    data: {
+   
+      images:[
+        
+      {url: "img/pict3.png",name:'картинка1',price:1000},
+      {url: "img/pict4.png",name:"картинка2",price:1500},
+      {url: "img/pict5.png",name:"картинка3",price:1200}
+     
+      ],
+      images:[
+      {url: "img/pict6.png",name:"картинка4",price:1300},
+      {url: "img/pict7.png",name:"картинка5",price:1000},
+      {url: "img/pict8.png",name:"картинка6",price:1100}
+
+
+      ],
+         
+
+  }, method: {
+    increase:
+    function() {
+
+        function compare(a, b) {
+      if (a.price < b.price)
+        return -1;
+      if (a.price > b.price)
+        return 1;
+      return 0;
+    }
+    return this.images.sort(compare);
+    }
+
+  }
+
+ 
+
+
+
+
+})
+
+
+
+</script>
+
+<script>
+
+
+
+
+</script>
+
+
+   </div>
+    
+  
+
+
+</body>
+</html>
